@@ -8,5 +8,5 @@ function nextSequence(){
     var randomcolor = btncolor[rand];
 
     gamePattern.push(randomcolor);
-    console.log(gamePattern);
+    $("#"+randomcolor).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 }
