@@ -1,14 +1,12 @@
-// $(document).on("keydown",function(event){
-//     $("h1").slideToggle();
-// });
-var btncolor = ["red", "blue", "green", "yellow"];
-var randomcolor = btncolor[nextSequence()];
 
+var btncolor = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
-gamePattern.push(randomcolor);
-console.log(gamePattern);
+nextSequence();
 
 function nextSequence(){
     var rand = Math.floor(Math.random()*4);
-    return rand;
+    var randomcolor = btncolor[rand];
+
+    gamePattern.push(randomcolor);
+    console.log(gamePattern);
 }
