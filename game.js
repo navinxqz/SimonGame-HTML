@@ -7,7 +7,7 @@ var userClickedPattern = [];
 $(".btn").on("click", function(){
     var chosenColor = $(this).attr("id");
     userClickedPattern.push(chosenColor);
-    console.log("Button clicked: "+userClickedPattern);
+    console.log(userClickedPattern);
 });
 
 function nextSequence(){
