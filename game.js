@@ -13,3 +13,8 @@ function nextSequence(){
     var audio = new Audio("./sounds/"+randomcolor+".mp3");
     audio.play();
 }
+
+$(".btn").on("click", function(){
+    var choosenColor = $(this).attr("id");
+    console.log("Button clicked: "+choosenColor);
+});
