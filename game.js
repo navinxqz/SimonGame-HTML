@@ -12,14 +12,17 @@ $(".btn").on("click", function(){
     userClickedPattern.push(chosenColor);
     playSound(chosenColor);
     animatePress(chosenColor);
+
+    checkAns(userClickedPattern.length - 1);
     // console.log(userClickedPattern);
 });
 
 $(document).on("keydown",function(event){
     if(!gStarted){
+
         nextSequence();
-        
         level++;
+
         gStarted = true;
         $("h1").text("Level "+level);
     }
@@ -43,4 +46,16 @@ function animatePress(currentColor){
     setTimeout(function(){
         $("#"+currentColor).removeClass("pressed");
     }, 100);
+}
+function checkAns(currentlvl){
+    if(userClickedPattern[currentlvl] == gamePattern[currentlvl]){
+        // console.log("Success");
+        if(userClickedPattern.length == gamePattern.length){
+            setTimeout(function(){
+                nextSequence();
+                userClickedPattern = [];
+            }, 1000);
+        }
+        
+    }
 }
