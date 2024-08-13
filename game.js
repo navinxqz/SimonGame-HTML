@@ -21,14 +21,15 @@ $(document).on("keydown",function(event){
     if(!gStarted){
 
         nextSequence();
-        level++;
-
+        // $("h1").text("Level "+level);
         gStarted = true;
-        $("h1").text("Level "+level);
     }
 });
 
 function nextSequence(){
+    level++;
+    $("h1").text("Level "+level);
+    
     var rand = Math.floor(Math.random()*4);
     var randomcolor = btncolor[rand];
 
@@ -48,12 +49,12 @@ function animatePress(currentColor){
     }, 100);
 }
 function checkAns(currentlvl){
-    if(userClickedPattern[currentlvl] == gamePattern[currentlvl]){
+    if(userClickedPattern[currentlvl] === gamePattern[currentlvl]){
         // console.log("Success");
-        if(userClickedPattern.length == gamePattern.length){
+        if(userClickedPattern.length === gamePattern.length){
             setTimeout(function(){
-                nextSequence();
                 userClickedPattern = [];
+                nextSequence();
             }, 1000);
         }
         
