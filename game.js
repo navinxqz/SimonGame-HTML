@@ -50,8 +50,8 @@ function animatePress(currentColor){
 }
 function checkAns(currentlvl){
     if(userClickedPattern[currentlvl] === gamePattern[currentlvl]){
-        // console.log("Success");
         if(userClickedPattern.length === gamePattern.length){
+
             setTimeout(function(){
                 userClickedPattern = [];
                 nextSequence();
@@ -66,5 +66,13 @@ function checkAns(currentlvl){
         }, 200);
 
         $("h1").text("Game Over! Press Any Key to Restart");
+        startOver();
         }  
+}
+function startOver(){
+    gamePattern = [];
+    userClickedPattern = [];
+    
+    gStarted = false;
+    level = 0;
 }
