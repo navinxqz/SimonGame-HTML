@@ -13,6 +13,10 @@ $(".btn").on("click", function(){
     // console.log(userClickedPattern);
 });
 
+$(document).on("keydown",function(event){
+    nextSequence();
+});
+
 function nextSequence(){
     var rand = Math.floor(Math.random()*4);
     var randomcolor = btncolor[rand];
@@ -27,6 +31,7 @@ function playSound(name){
 }
 function animatePress(currentColor){
     $("#"+currentColor).addClass("pressed");
+    
     setTimeout(function(){
         $("#"+currentColor).removeClass("pressed");
     }, 100);
