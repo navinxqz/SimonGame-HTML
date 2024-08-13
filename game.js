@@ -20,8 +20,8 @@ $(".btn").on("click", function(){
 $(document).on("keydown",function(event){
     if(!gStarted){
 
-        nextSequence();
         // $("h1").text("Level "+level);
+        nextSequence();
         gStarted = true;
     }
 });
@@ -29,7 +29,7 @@ $(document).on("keydown",function(event){
 function nextSequence(){
     level++;
     $("h1").text("Level "+level);
-    
+
     var rand = Math.floor(Math.random()*4);
     var randomcolor = btncolor[rand];
 
@@ -56,6 +56,16 @@ function checkAns(currentlvl){
                 userClickedPattern = [];
                 nextSequence();
             }, 1000);
+        }else{
+            var wrong = new Audio("./sounds/wrong.mp3");
+            wrong.play();
+
+            $("h1").text("Game Over! Press Any Key to Restart");
+            $(document).addClass(".game-over");
+
+            setTimeout(function(){
+                $(document).removeClass(".game-over");
+            }, 200);
         }
         
     }
