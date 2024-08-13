@@ -1,9 +1,10 @@
 
 var btncolor = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
-// nextSequence();
 
 var userClickedPattern = [];
+var level = 0;
+
 $(".btn").on("click", function(){
     var chosenColor = $(this).attr("id");
 
@@ -15,6 +16,7 @@ $(".btn").on("click", function(){
 
 $(document).on("keydown",function(event){
     nextSequence();
+    $("h1").text("Level "+level);
 });
 
 function nextSequence(){
