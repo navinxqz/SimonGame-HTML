@@ -3,6 +3,7 @@ var btncolor = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 
 var userClickedPattern = [];
+var gStarted = false;
 var level = 0;
 
 $(".btn").on("click", function(){
@@ -15,8 +16,13 @@ $(".btn").on("click", function(){
 });
 
 $(document).on("keydown",function(event){
-    nextSequence();
-    $("h1").text("Level "+level);
+    if(!gStarted){
+        nextSequence();
+        
+        level++;
+        gStarted = true;
+        $("h1").text("Level "+level);
+    }
 });
 
 function nextSequence(){
