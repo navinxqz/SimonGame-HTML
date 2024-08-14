@@ -16,13 +16,12 @@ body {
   width: 50%;
   margin: auto;
 }
-.gameBtn{
+.start-btn{
   margin: 15px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  height: 70px;
+  width: 400px;
+  border-radius: 20px;
+  border: none;
 }
 
 .btn {
