@@ -15,7 +15,14 @@ body {
   display: block;
   width: 50%;
   margin: auto;
-
+}
+.gameBtn{
+  margin: 15px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
 }
 
 .btn {
