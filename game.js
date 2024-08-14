@@ -26,6 +26,13 @@ $(document).on("keydown",function(event){
     }
 });
 
+$(".start-btn").on("click",function(event){
+    if(!gStarted){
+        nextSequence();
+        gStarted = true;
+    }
+});
+
 function nextSequence(){
     level++;
     $("h1").text("Level "+level);
