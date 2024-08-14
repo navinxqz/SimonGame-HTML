@@ -16,7 +16,7 @@ $(".btn").on("click", function(){
     checkAns(userClickedPattern.length - 1);
     // console.log(userClickedPattern);
 });
-
+// for keyboard user
 $(document).on("keydown",function(event){
     if(!gStarted){
 
@@ -25,9 +25,15 @@ $(document).on("keydown",function(event){
         gStarted = true;
     }
 });
-
+// for button user
 $(".start-btn").on("click",function(event){
     if(!gStarted){
+        $(".start-btn").addClass("pressed");
+
+        setTimeout(function(){
+            $(".start-btn").removeClass("pressed");
+        }, 500);
+
         nextSequence();
         gStarted = true;
     }
